@@ -105,16 +105,20 @@ xdg-open index.html
 ## 📸 Screenshots
 
 ### Homepage Hero Section
-Features the main search widget with location, dates, and guest selection.
+<img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/d4f70bd8-1531-41cc-9a4a-da95294b1139" />
+
 
 ### Popular Destinations
-Showcases 6+ iconic travel destinations with stunning imagery and pricing.
+<img width="1915" height="1026" alt="image" src="https://github.com/user-attachments/assets/2901cb5a-6e8a-4df2-b6f5-886c6dc5fa0b" />
+
 
 ### Travel Packages
-Exclusive all-inclusive packages with detailed descriptions and booking options.
+<img width="1916" height="1020" alt="image" src="https://github.com/user-attachments/assets/174bcb29-53bd-4bd2-8d49-80f98dcba535" />
+
 
 ### Customer Testimonials
-Real reviews from satisfied travelers around the globe.
+<img width="1897" height="951" alt="image" src="https://github.com/user-attachments/assets/ecea19e9-0c83-4745-9532-e0f8cc31f2d2" />
+
 
 ---
 
