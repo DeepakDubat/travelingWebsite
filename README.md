@@ -105,19 +105,19 @@ xdg-open index.html
 ## 📸 Screenshots
 
 ### Homepage Hero Section
-<img width="1919" height="1032" alt="image" src="https://github.com/user-attachments/assets/d4f70bd8-1531-41cc-9a4a-da95294b1139" />
+<img width="600" height="1032" alt="image" src="https://github.com/user-attachments/assets/d4f70bd8-1531-41cc-9a4a-da95294b1139" />
 
 
 ### Popular Destinations
-<img width="1915" height="1026" alt="image" src="https://github.com/user-attachments/assets/2901cb5a-6e8a-4df2-b6f5-886c6dc5fa0b" />
+<img width="600" height="1026" alt="image" src="https://github.com/user-attachments/assets/2901cb5a-6e8a-4df2-b6f5-886c6dc5fa0b" />
 
 
 ### Travel Packages
-<img width="1916" height="1020" alt="image" src="https://github.com/user-attachments/assets/174bcb29-53bd-4bd2-8d49-80f98dcba535" />
+<img width="600" height="1020" alt="image" src="https://github.com/user-attachments/assets/174bcb29-53bd-4bd2-8d49-80f98dcba535" />
 
 
 ### Customer Testimonials
-<img width="1897" height="951" alt="image" src="https://github.com/user-attachments/assets/ecea19e9-0c83-4745-9532-e0f8cc31f2d2" />
+<img width="600" height="932" alt="image" src="https://github.com/user-attachments/assets/37062dd2-a984-4b70-9ca8-065fd081adde" />
 
 
 ---
