@@ -155,7 +155,7 @@ For queries, feedback, or collaboration opportunities:
 - **Developer:** Deepak Dubat
 - **Email:** [dubatdeepak3731@gmail.com](mailto:dubatdeepak3731@gmail.com)
 - **GitHub:** [@DeepakDubat](https://github.com/DeepakDubat)
-- **Live Project:** [https://travelwithus-onlinebooking.pages.dev]
+- **Live Project:** [travelwithus-onlinebooking]
               (https://travel-with-us-online-booking.netlify.app)
 
 ---
