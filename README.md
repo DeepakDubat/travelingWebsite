@@ -2,8 +2,8 @@
 
 **Travel With Us** is a modern, fully responsive travel booking website that helps users explore dream destinations, book vacation packages, and plan their perfect getaway. Built with clean UI/UX principles, this project showcases a complete travel agency website with booking functionality, destination galleries, package deals, and customer testimonials.
 
-🔗 **Live Demo:** [https://travelwithus-onlinebooking.pages.dev/]
-                (https://travel-with-us-online-booking.netlify.app)
+🔗 **Live Demo:** [travelwithus-onlinebooking]
+                (https://travelwithus-onlinebooking.pages.dev)
 
 ---
 
@@ -155,7 +155,7 @@ For queries, feedback, or collaboration opportunities:
 - **Developer:** Deepak Dubat
 - **Email:** [dubatdeepak3731@gmail.com](mailto:dubatdeepak3731@gmail.com)
 - **GitHub:** [@DeepakDubat](https://github.com/DeepakDubat)
-- **Live Project:** [https://travelwithus-onlinebooking.pages.dev/]
+- **Live Project:** [https://travelwithus-onlinebooking.pages.dev]
               (https://travel-with-us-online-booking.netlify.app)
 
 ---
