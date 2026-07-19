@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel With Us | All Packages & Tickets</title>
+    <meta name="description" content="Browse all travel packages and book your dream destination with Travel With Us.">
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        :root {
+            --brand-indigo: #4F46E5;
+            --brand-purple: #8B5CF6;
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --amber-400: #fbbf24;
+            --green: #10b981;
+            --white: #ffffff;
+            --font-sans: 'Inter', sans-serif;
+            --font-display: 'Outfit', sans-serif;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--slate-50);
+            color: var(--slate-800);
+            min-height: 100vh;
+        }
+
+        a { text-decoration: none; }
+
+        /* ---- NAVBAR ---- */
+        .nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 1rem 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--brand-indigo), var(--brand-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-brand img {
+            height: 2.2rem;
+            width: 2.2rem;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: var(--slate-700);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--brand-purple); }
+
+        .nav-back {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--slate-600);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.75rem;
+            background: var(--slate-100);
+            transition: all 0.2s;
+        }
+
+        .nav-back:hover {
+            background: var(--slate-200);
+            color: var(--slate-900);
+            transform: translateX(-2px);
+        }
+
+        /* ---- HERO BANNER ---- */
+        .page-hero {
+            background: linear-gradient(135deg, var(--brand-indigo) 0%, var(--brand-purple) 100%);
+            padding: 4rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .page-hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .page-hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            color: rgba(255,255,255,0.95);
+            padding: 0.3rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .page-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            color: var(--white);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .page-hero p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* ---- FILTERS ---- */
+        .filters-bar {
+            background: var(--white);
+            border-bottom: 1px solid var(--slate-200);
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            border: 1.5px solid var(--slate-200);
+            background: var(--white);
+            color: var(--slate-600);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: var(--brand-indigo);
+            background: rgba(79, 70, 229, 0.06);
+            color: var(--brand-indigo);
+        }
+
+        /* ---- MAIN CONTENT ---- */
+        .tickets-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 5rem;
+        }
+
+        .tickets-count {
+            font-size: 0.875rem;
+            color: var(--slate-500);
+            font-weight: 500;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .tickets-count strong {
+            color: var(--slate-900);
+        }
+
+        /* ---- TICKET CARD ---- */
+        .tickets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .ticket-card {
+            background: var(--white);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid var(--slate-100);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.35s;
+        }
+
+        .ticket-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
+        }
+
+        .ticket-img-wrap {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .ticket-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .ticket-card:hover .ticket-img-wrap img {
+            transform: scale(1.08);
+        }
+
+        .ticket-country-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(4px);
+            padding: 0.25rem 0.875rem;
+            border-radius: 9999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--brand-indigo);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .ticket-category-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .badge-adventure { background: #fef3c7; color: #92400e; }
+        .badge-culture   { background: #dbeafe; color: #1e40af; }
+        .badge-luxury    { background: #f3e8ff; color: #6b21a8; }
+        .badge-nature    { background: #d1fae5; color: #065f46; }
+
+        .ticket-body {
+            padding: 1.5rem;
+        }
+
+        .ticket-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .ticket-desc {
+            color: var(--slate-500);
+            font-size: 0.875rem;
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        .ticket-meta {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .ticket-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--slate-500);
+        }
+
+        .ticket-meta-item i {
+            color: var(--brand-purple);
+            font-size: 0.85rem;
+        }
+
+        .ticket-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--slate-100);
+        }
+
+        .ticket-price-block {}
+
+        .ticket-price-from {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--slate-400);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .ticket-price {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--brand-indigo);
+            line-height: 1.2;
+        }
+
+        .ticket-price-per {
+            font-size: 0.75rem;
+            color: var(--slate-400);
+            font-weight: 500;
+        }
+
+        .ticket-book-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--brand-indigo);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.875rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+            text-decoration: none;
+        }
+
+        .ticket-book-btn:hover {
+            background: var(--brand-purple);
+            transform: scale(1.04);
+            box-shadow: 0 6px 18px rgba(79, 70, 229, 0.35);
+            color: var(--white);
+        }
+
+        .ticket-book-btn i { font-size: 0.85rem; }
+
+        /* ---- RATING ---- */
+        .ticket-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .ticket-rating i { color: var(--amber-400); font-size: 0.75rem; }
+
+        .ticket-rating span {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--slate-500);
+            margin-left: 0.25rem;
+        }
+
+        /* ---- EMPTY STATE ---- */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 1.5rem;
+            display: none;
+        }
+
+        .empty-state i {
+            font-size: 3rem;
+            color: var(--slate-300);
+            margin-bottom: 1rem;
+        }
+
+        .empty-state p {
+            color: var(--slate-400);
+            font-size: 1rem;
+        }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 768px) {
+            .nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .tickets-grid { grid-template-columns: 1fr; }
+            .page-hero { padding: 2.5rem 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .tickets-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="nav">
+        <div class="nav-brand">
+            <img src="logo.jpg" alt="Logo">
+            Travel With Us
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#Destination">Destinations</a>
+            <a href="index.html#packages">Packages</a>
+            <a href="index.html#Contact">Contact</a>
+        </div>
+        <a href="index.html" class="nav-back">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+    </nav>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <div class="page-hero-inner">
+            <span class="page-hero-badge">All Available Packages</span>
+            <h1>Choose Your Perfect Trip</h1>
+            <p>Explore all our curated travel packages. Select any destination and book your ticket in seconds.</p>
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters-bar">
+        <button class="filter-btn active" onclick="filterTickets('all', this)">
+            <i class="fas fa-globe"></i> All
+        </button>
+        <button class="filter-btn" onclick="filterTickets('adventure', this)">
+            <i class="fas fa-hiking"></i> Adventure
+        </button>
+        <button class="filter-btn" onclick="filterTickets('culture', this)">
+            <i class="fas fa-landmark"></i> Culture
+        </button>
+        <button class="filter-btn" onclick="filterTickets('luxury', this)">
+            <i class="fas fa-gem"></i> Luxury
+        </button>
+        <button class="filter-btn" onclick="filterTickets('nature', this)">
+            <i class="fas fa-leaf"></i> Nature
+        </button>
+    </div>
+
+    <!-- Tickets -->
+    <div class="tickets-container">
+        <p class="tickets-count" id="ticketCount"><strong>8</strong> packages available</p>
+
+        <div class="tickets-grid" id="ticketsGrid">
+
+            <!-- 1. East African Safari -->
+            <div class="ticket-card" data-category="adventure">
+                <div class="ticket-img-wrap">
+                    <img src="pop 1.jpg" alt="East African Safari">
+                    <div class="ticket-country-badge">Kenya</div>
+                    <div class="ticket-category-badge badge-adventure">Adventure</div>
+                </div>
+                <div class="ticket-body">
+                    <div class="ticket-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span>5.0 (214 reviews)</span>
+                    </div>
+                    <h2 class="ticket-title">East African Safari</h2>
+                    <p class="ticket-desc">Discover stunning landscapes, idyllic beaches, and wildlife-rich wilderness in a thrilling blend of adventure and natural beauty.</p>
+                    <div class="ticket-meta">
+                        <div class="ticket-meta-item"><i class="fas fa-moon"></i> 7 Nights / 8 Days</div>
+                        <div class="ticket-meta-item"><i class="fas fa-users"></i> Max 10 Pax</div>
+                        <div class="ticket-meta-item"><i class="fas fa-utensils"></i> Meals Incl.</div>
+                    </div>
+                    <div class="ticket-footer">
+                        <div class="ticket-price-block">
+                            <div class="ticket-price-from">Starts at</div>
+                            <div class="ticket-price">₹13,999</div>
+                            <div class="ticket-price-per">per person</div>
+                        </div>
+                        <a href="payment.html?pkg=East+African+Safari&price=13999&nights=7&img=pop+1.jpg" class="ticket-book-btn">
+                            Book Now <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Santorini, Greece -->
+            <div class="ticket-card" data-category="luxury">
+                <div class="ticket-img-wrap">
+                    <img src="pop 3.jpg" alt="Santorini">
+                    <div class="ticket-country-badge">Greece</div>
+                    <div class="ticket-category-badge badge-luxury">Luxury</div>
+                </div>
+                <div class="ticket-body">
+                    <div class="ticket-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span>4.9 (189 reviews)</span>
+                    </div>
+                    <h2 class="ticket-title">Santorini, Greece</h2>
+                    <p class="ticket-desc">White-washed buildings against the deep blue Aegean sea. A romantic masterpiece of light, architecture, and legendary sunsets.</p>
+                    <div class="ticket-meta">
+                        <div class="ticket-meta-item"><i class="fas fa-moon"></i> 5 Nights / 6 Days</div>
+                        <div class="ticket-meta-item"><i class="fas fa-users"></i> Max 8 Pax</div>
+                        <div class="ticket-meta-item"><i class="fas fa-hotel"></i> Hotel Incl.</div>
+                    </div>
+                    <div class="ticket-footer">
+                        <div class="ticket-price-block">
+                            <div class="ticket-price-from">Starts at</div>
+                            <div class="ticket-price">₹11,499</div>
+                            <div class="ticket-price-per">per person</div>
+                        </div>
+                        <a href="payment.html?pkg=Santorini%2C+Greece&price=11499&nights=5&img=pop+3.jpg" class="ticket-book-btn">
+                            Book Now <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. The Colosseum, Rome -->
+            <div class="ticket-card" data-category="culture">
+                <div class="ticket-img-wrap">
+                    <img src="pic 4.jpg" alt="The Colosseum, Rome">
+                    <div class="ticket-country-badge">Rome</div>
+                    <div class="ticket-category-badge badge-culture">Culture</div>
+                </div>
+                <div class="ticket-body">
+                    <div class="ticket-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        <span>4.7 (312 reviews)</span>
+                    </div>
+                    <h2 class="ticket-title">The Colosseum, Rome</h2>
+                    <p class="ticket-desc">Walk through 2000 years of history at the iconic Roman amphitheater. Explore Vatican City, Trevi Fountain and the Eternal City.</p>
+                    <div class="ticket-meta">
+                        <div class="ticket-meta-item"><i class="fas fa-moon"></i> 6 Nights / 7 Days</div>
+                        <div class="ticket-meta-item"><i class="fas fa-users"></i> Max 12 Pax</div>
+                        <div class="ticket-meta-item"><i class="fas fa-map"></i> Guide Incl.</div>
+                    </div>
+                    <div class="ticket-footer">
+                        <div class="ticket-price-block">
+                            <div class="ticket-price-from">Starts at</div>
+                            <div class="ticket-price">₹18,999</div>
+                            <div class="ticket-price-per">per person</div>
+                        </div>
+                        <a href="payment.html?pkg=The+Colosseum%2C+Rome&price=18999&nights=6&img=pic+4.jpg" class="ticket-book-btn">
+                            Book Now <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Burj Khalifa, Dubai -->
+            <div class="ticket-card" data-category="luxury">
+                <div class="ticket-img-wrap">
+                    <img src="pic 6.jpg" alt="Burj Khalifa, Dubai">
+                    <div class="ticket-country-badge">Dubai</div>
+                    <div class="ticket-category-badge badge-luxury">Luxury</div>
+                </div>
+                <div class="ticket-body">
+                    <div class="ticket-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span>4.8 (278 reviews)</span>
+                    </div>
+                    <h2 class="ticket-title">Burj Khalifa, Dubai</h2>
+                    <p class="ticket-desc">Experience the height of luxury at the world's tallest building. Enjoy Dubai's gold souks, desert safaris, and world-class dining.</p>
+                    <div class="ticket-meta">
+                        <div class="ticket-meta-item"><i class="fas fa-moon"></i> 5 Nights / 6 Days</div>
+                        <div class="ticket-meta-item"><i class="fas fa-users"></i> Max 10 Pax</div>
+                        <div class="ticket-meta-item"><i class="fas fa-plane"></i> Flights Incl.</div>
+                    </div>
+                    <div class="ticket-footer">
+                        <div class="ticket-price-block">
+                            <div class="ticket-price-from">Starts at</div>
+                            <div class="ticket-price">₹22,999</div>
+                            <div class="ticket-price-per">per person</div>
+                        </div>
+                        <a href="payment.html?pkg=Burj+Khalifa%2C+Dubai&price=22999&nights=5&img=pic+6.jpg" class="ticket-book-btn">
+                            Book Now <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Tokyo Temple, Japan -->
+            <div class="ticket-card" data-category="culture">
+                <div class="ticket-img-wrap">
+                    <img src="pic 7.jpg" alt="Tokyo Temple, Japan">
+                    <div class="ticket-country-badge">Japan</div>
+                    <div class="ticket-category-badge badge-culture">Culture</div>
+                </div>
+                <div class="ticket-body">
+                    <div class="ticket-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span>5.0 (401 reviews)</span>
+                    </div>
+                    <h2 class="ticket-title">Tokyo Temple, Japan</h2>
+                    <p class="ticket-desc">Discover peace and tradition amidst the neon lights of the world's largest metropolis. Cherry blossoms, sushi, and ancient temples await.</p>
+                    <div class="ticket-meta">
+                        <div class="ticket-meta-item"><i class="fas fa-moon"></i> 8 Nights / 9 Days</div>
+                        <div class="ticket-meta-item"><i class="fas fa-users"></i> Max 8 Pax</div>
+                        <div class="ticket-meta-item"><i class="fas fa-map"></i> Guide Incl.</div>
+                    </div>
+                    <div class="ticket-footer">
+                        <div class="ticket-price-block">
+                            <div class="ticket-price-from">Starts at</div>
+                            <div class="ticket-price">₹29,999</div>
+                            <div class="ticket-price-per">per person</div>
+                        </div>
+                        <a href="payment.html?pkg=Tokyo+Temple%2C+Japan&price=29999&nights=8&img=pic+7.jpg" class="ticket-book-btn">
+                            Book Now <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Niagara Falls, Canada -->
+            <div class="ticket-card" data-category="nature">
+                <div class="ticket-img-wrap">
+                    <img src="pic 8.jpg" alt="Niagara Falls">
+                    <div class="ticket-country-badge">Canada</div>
+                    <div class="ticket-category-badge badge-nature">Nature</div>
+                </div>
+                <div class="ticket-body">
+                    <div class="ticket-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        <span>4.6 (156 reviews)</span>
+                    </div>
+                    <h2 class="ticket-title">Niagara Falls, Canada</h2>
+                    <p class="ticket-desc">Experience the thunderous roar of nature's most spectacular curtain of water. Boat rides, rainbow views, and breathtaking vistas.</p>
+                    <div class="ticket-meta">
+                        <div class="ticket-meta-item"><i class="fas fa-moon"></i> 5 Nights / 6 Days</div>
+                        <div class="ticket-meta-item"><i class="fas fa-users"></i> Max 15 Pax</div>
+                        <div class="ticket-meta-item"><i class="fas fa-hotel"></i> Hotel Incl.</div>
+                    </div>
+                    <div class="ticket-footer">
+                        <div class="ticket-price-block">
+                            <div class="ticket-price-from">Starts at</div>
+                            <div class="ticket-price">₹24,999</div>
+                            <div class="ticket-price-per">per person</div>
+                        </div>
+                        <a href="payment.html?pkg=Niagara+Falls%2C+Canada&price=24999&nights=5&img=pic+8.jpg" class="ticket-book-btn">
+                            Book Now <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Sydney Opera House, Australia -->
+            <div class="ticket-card" data-category="culture">
+                <div class="ticket-img-wrap">
+                    <img src="pic 9.jpg" alt="Sydney Opera House">
+                    <div class="ticket-country-badge">Australia</div>
+                    <div class="ticket-category-badge badge-culture">Culture</div>
+                </div>
+                <div class="ticket-body">
+                    <div class="ticket-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        <span>4.9 (223 reviews)</span>
+                    </div>
+                    <h2 class="ticket-title">Sydney Opera House</h2>
+                    <p class="ticket-desc">Explore the world-famous architectural icon of the Australian coast. Sydney Harbour Bridge, Bondi Beach, and vibrant city life await.</p>
+                    <div class="ticket-meta">
+                        <div class="ticket-meta-item"><i class="fas fa-moon"></i> 7 Nights / 8 Days</div>
+                        <div class="ticket-meta-item"><i class="fas fa-users"></i> Max 12 Pax</div>
+                        <div class="ticket-meta-item"><i class="fas fa-plane"></i> Flights Incl.</div>
+                    </div>
+                    <div class="ticket-footer">
+                        <div class="ticket-price-block">
+                            <div class="ticket-price-from">Starts at</div>
+                            <div class="ticket-price">₹32,999</div>
+                            <div class="ticket-price-per">per person</div>
+                        </div>
+                        <a href="payment.html?pkg=Sydney+Opera+House%2C+Australia&price=32999&nights=7&img=pic+9.jpg" class="ticket-book-btn">
+                            Book Now <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Bellas Artes, Mexico -->
+            <div class="ticket-card" data-category="culture">
+                <div class="ticket-img-wrap">
+                    <img src="pic 10.jpg" alt="Bellas Artes, Mexico">
+                    <div class="ticket-country-badge">Mexico</div>
+                    <div class="ticket-category-badge badge-culture">Culture</div>
+                </div>
+                <div class="ticket-body">
+                    <div class="ticket-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        <span>4.5 (98 reviews)</span>
+                    </div>
+                    <h2 class="ticket-title">Bellas Artes, Mexico</h2>
+                    <p class="ticket-desc">A stunning monument of culture, art and history in the heart of Mexico City. Murals, museums, and vibrant street food culture.</p>
+                    <div class="ticket-meta">
+                        <div class="ticket-meta-item"><i class="fas fa-moon"></i> 6 Nights / 7 Days</div>
+                        <div class="ticket-meta-item"><i class="fas fa-users"></i> Max 10 Pax</div>
+                        <div class="ticket-meta-item"><i class="fas fa-map"></i> Guide Incl.</div>
+                    </div>
+                    <div class="ticket-footer">
+                        <div class="ticket-price-block">
+                            <div class="ticket-price-from">Starts at</div>
+                            <div class="ticket-price">₹19,999</div>
+                            <div class="ticket-price-per">per person</div>
+                        </div>
+                        <a href="payment.html?pkg=Bellas+Artes%2C+Mexico&price=19999&nights=6&img=pic+10.jpg" class="ticket-book-btn">
+                            Book Now <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState">
+            <i class="fas fa-search"></i>
+            <p>No packages found for this filter.</p>
+        </div>
+    </div>
+
+    <script>
+        function filterTickets(category, btn) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cards = document.querySelectorAll('.ticket-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const match = category === 'all' || card.dataset.category === category;
+                card.style.display = match ? 'block' : 'none';
+                if (match) visibleCount++;
+            });
+
+            document.getElementById('ticketCount').innerHTML =
+                `<strong>${visibleCount}</strong> package${visibleCount !== 1 ? 's' : ''} available`;
+
+            document.getElementById('emptyState').style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+    </script>
+</body>
+
+</html>

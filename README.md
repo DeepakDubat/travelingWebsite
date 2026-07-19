@@ -2,8 +2,7 @@
 
 **Travel With Us** is a modern, fully responsive travel booking website that helps users explore dream destinations, book vacation packages, and plan their perfect getaway. Built with clean UI/UX principles, this project showcases a complete travel agency website with booking functionality, destination galleries, package deals, and customer testimonials.
 
-🔗 **Live Demo:** [travelwithus-onlinebooking]
-                (https://travelwithus-onlinebooking.pages.dev)
+🔗 **Live Demo:** [travel-with-us-online-booking.netlify.app](https://travel-with-us-online-booking.netlify.app)
 
 ---
 
@@ -105,20 +104,16 @@ xdg-open index.html
 ## 📸 Screenshots
 
 ### Homepage Hero Section
-<img width="600" height="1032" alt="image" src="https://github.com/user-attachments/assets/d4f70bd8-1531-41cc-9a4a-da95294b1139" />
-
+Features the main search widget with location, dates, and guest selection.
 
 ### Popular Destinations
-<img width="600" height="1026" alt="image" src="https://github.com/user-attachments/assets/2901cb5a-6e8a-4df2-b6f5-886c6dc5fa0b" />
-
+Showcases 6+ iconic travel destinations with stunning imagery and pricing.
 
 ### Travel Packages
-<img width="600" height="1020" alt="image" src="https://github.com/user-attachments/assets/174bcb29-53bd-4bd2-8d49-80f98dcba535" />
-
+Exclusive all-inclusive packages with detailed descriptions and booking options.
 
 ### Customer Testimonials
-<img width="600" height="932" alt="image" src="https://github.com/user-attachments/assets/37062dd2-a984-4b70-9ca8-065fd081adde" />
-
+Real reviews from satisfied travelers around the globe.
 
 ---
 
@@ -155,8 +150,7 @@ For queries, feedback, or collaboration opportunities:
 - **Developer:** Deepak Dubat
 - **Email:** [dubatdeepak3731@gmail.com](mailto:dubatdeepak3731@gmail.com)
 - **GitHub:** [@DeepakDubat](https://github.com/DeepakDubat)
-- **Live Project:** [travelwithus-onlinebooking]
-              (https://travel-with-us-online-booking.netlify.app)
+- **Live Project:** [travel-with-us-online-booking.netlify.app](https://travel-with-us-online-booking.netlify.app)
 
 ---
 
